@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1" />
+<title>SIMON — AAA Memory Challenge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Orbitron:wght@600;700;800;900&family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Cinematic Background -->
+  <div class="bg-layer">
+    <div class="ambient ambient-red"></div>
+    <div class="ambient ambient-blue"></div>
+    <div class="ambient ambient-violet"></div>
+    <div class="fog fog-1"></div>
+    <div class="fog fog-2"></div>
+    <div class="grid-overlay"></div>
+    <canvas id="particles"></canvas>
+    <div class="scanlines"></div>
+    <div class="vignette"></div>
+  </div>
+
+  <!-- START SCREEN -->
+  <section id="startScreen" class="screen active">
+    <div class="start-inner">
+      <div class="title-wrap">
+        <h1 class="title" data-text="SIMON">SIMON</h1>
+        <p class="subtitle">— MEMORY CHALLENGE —</p>
+      </div>
+      <form id="startForm" class="start-form glass">
+        <label for="playerName" class="field-label">Enter Callsign</label>
+        <input id="playerName" type="text" maxlength="14" autocomplete="off" placeholder="Player" spellcheck="false" />
+        <button id="startBtn" type="submit" class="btn btn-primary">
+          <span>START</span>
+          <i class="btn-glow"></i>
+          <i class="btn-sheen"></i>
+        </button>
+        <p class="hint">Press <kbd>Enter</kbd> to begin</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- GAME SCREEN -->
+  <section id="gameScreen" class="screen">
+    <div class="game-inner">
+      <header class="hud">
+        <div class="hud-card glass">
+          <span class="hud-label">Level</span>
+          <span id="hudLevel" class="hud-value">01</span>
+        </div>
+        <div class="hud-card glass hud-center">
+          <span class="hud-label">Best</span>
+          <span id="hudBest" class="hud-value gold">00</span>
+        </div>
+        <div class="hud-card glass">
+          <span class="hud-label">Steps</span>
+          <span id="hudSteps" class="hud-value">0<span class="dim">/0</span></span>
+        </div>
+      </header>
+
+      <div id="progressBar" class="progress-bar" aria-label="sequence progress"></div>
+
+      <div class="board-wrap">
+        <div id="board" class="board">
+          <button class="pad pad-green" data-color="green" data-tone="0" aria-label="green"></button>
+          <button class="pad pad-red" data-color="red" data-tone="1" aria-label="red"></button>
+          <button class="pad pad-yellow" data-color="yellow" data-tone="2" aria-label="yellow"></button>
+          <button class="pad pad-blue" data-color="blue" data-tone="3" aria-label="blue"></button>
+          <div class="hub">
+            <div class="hub-inner">
+              <div class="hub-halo hub-halo-blue"></div>
+              <div class="hub-halo hub-halo-red"></div>
+              <div class="hub-ring"></div>
+              <div class="hub-core">
+                <div class="hub-sheen"></div>
+                <span id="hubName" class="hub-name">PLAYER</span>
+                <span id="hubState" class="hub-state">Get Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="flash" class="flash"></div>
+      </div>
+
+      <div class="controls">
+        <button id="restartBtn" class="btn btn-ghost"><span>Restart</span><i class="btn-sheen"></i></button>
+        <button id="quitBtn" class="btn btn-ghost"><span>Quit</span><i class="btn-sheen"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME OVER -->
+  <section id="gameOverScreen" class="screen">
+    <div class="gover-card glass">
+      <div class="gover-glow"></div>
+      <h2 class="gover-title" data-text="GAME OVER">GAME OVER</h2>
+      <p class="gover-sub" id="goverPlayer">Player</p>
+      <div class="gover-stats">
+        <div class="stat"><span>Level</span><b id="goverLevel">1</b></div>
+        <div class="stat"><span>Best</span><b id="goverBest">0</b></div>
+      </div>
+      <div class="gover-actions">
+        <button id="playAgainBtn" class="btn btn-primary"><span>Play Again</span><i class="btn-glow"></i><i class="btn-sheen"></i></button>
+        <button id="homeBtn" class="btn btn-ghost"><span>Home</span><i class="btn-sheen"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
