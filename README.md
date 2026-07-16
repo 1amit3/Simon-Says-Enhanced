@@ -7,7 +7,7 @@
 
 ## 🚀 Live Demo
 
-🔗 **Play Here:** https://1amit3.github.io/Simon-says-Game/
+🔗 **Play Here:**  https://1amit3.github.io/Simon-Says-Enhanced/
 
 ---
 
