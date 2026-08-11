@@ -1,7 +1,7 @@
 # 🎮 Simon Game Enhanced
 
 >A modern, feature-rich version of the classic Simon Memory Game built with HTML, CSS & JavaScript.**
-> Test your memory, improve your concentration, and enjoy a smooth gaming experience across Desktop and Mobile devices
+> Test your memory, improve your concentration, and enjoy a smooth gaming experience across Desktop and Mobile devices.
 
 ---
 
@@ -13,7 +13,7 @@
 
 ## 📌 Overview
 
-Simon-says-Game Enhanced is a fully responsive browser-based memory game where players repeat an increasingly complex sequence of colors.
+Simon Game Enhanced is a fully responsive browser-based memory game where players repeat an increasingly complex sequence of colors.
 
 Unlike the traditional version, this enhanced edition focuses on better user experience, responsive design, smoother animations, mobile compatibility, and clean code architecture.
 
